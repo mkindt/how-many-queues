@@ -1,7 +1,6 @@
 #include "Queue.h"
 #include <iostream>
 #include <assert.h>
-#include <list>
 
 Queue::Queue() {
   theQueue = new int[10];
@@ -38,6 +37,20 @@ void Queue::enqueue(int x){
 }
 int Queue::dequeue(){
 	assert (!isEmpty());
+	if (size <= (capacity/4)) {
+		int * smallerQueue;
+		std::cout << "building smaller Queue" << std::endl;
+		smallerQueue = new int[capacity/2];
+		for (int i = 0; i < size; ++i){
+			smallerQueue[i]=theQueue[front%capacity];
+			front++;
+		}
+		delete[] theQueue;
+		theQueue = smallerQueue;
+		capacity = capacity/2;
+		back = front-1;
+		front = 0;
+	}
 	int result = theQueue[front];
 	front = (front+1)%capacity;
 	size--;
