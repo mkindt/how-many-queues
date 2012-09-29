@@ -8,7 +8,7 @@ private:
 	int back, front, capacity;
 public:
 	Queue();
-	~Queue();
+	//~Queue();
 	int dequeue();
 	void enqueue(int x);
 	int size;

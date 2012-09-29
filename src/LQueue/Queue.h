@@ -10,7 +10,7 @@ class Queue {
 
  public:
   Queue();
-  ~Queue();
+//  ~Queue();
   void enqueue(int v);
   int dequeue();
   int size();
