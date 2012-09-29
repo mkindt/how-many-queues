@@ -1,6 +1,6 @@
 #include <iostream>
 #include <ctime>
-#include "../AQueue/Queue.h"
+#include "../LLQueue/Queue.h"
 
 int main() {
 	int start, end, elapsed;
