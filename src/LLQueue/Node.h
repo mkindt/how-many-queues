@@ -8,7 +8,7 @@ private:
 	Node * next;
 public:
 	Node(int val);
-	~Node();
+	// ~Node();
 	int getValue();
 	Node * getNext();
 	void setNext(Node* n);
