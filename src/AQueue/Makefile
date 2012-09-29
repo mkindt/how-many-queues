@@ -9,6 +9,7 @@ Queue.o: Queue.h Queue.cpp
 	$(CPP) $(CPPFLAGS) -c Queue.cpp
 
 clean:
+	rm -f test1
 	rm -f *.o
 	rm -f *~
 	rm -f $(BUILD)/main
