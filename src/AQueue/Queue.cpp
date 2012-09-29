@@ -14,11 +14,11 @@ Queue::Queue() {
 void Queue::enqueue(int x){
 	if (size == capacity) {
 		int * biggerQueue;
-		std::cout << "building new Queue" << std::endl;
+		// std::cout << "building new Queue" << std::endl;
 		biggerQueue = new int[2*capacity];
 		for (int i = 0; i < size; ++i){
 			biggerQueue[i]=theQueue[front%size];
-			front++; //argh front back????
+			front++;
 		}
 		delete[] theQueue;
 		theQueue = biggerQueue;
@@ -28,18 +28,18 @@ void Queue::enqueue(int x){
 	}
 	back = (back+1)%capacity;
 	theQueue[back] = x;
-	//test -------------
-	for (int j = front; j <= back; ++j){
-			std::cout << theQueue[j] << " ";
-		}
-	std::cout << std::endl;
+	// test -------------
+	// for (int j = front; j <= back; ++j){
+	//		std::cout << theQueue[j] << " ";
+	//	}
+	// std::cout << std::endl;
 	size++;
 }
 int Queue::dequeue(){
 	assert (!isEmpty());
 	if (size <= (capacity/4)) {
 		int * smallerQueue;
-		std::cout << "building smaller Queue" << std::endl;
+		// std::cout << "building smaller Queue" << std::endl;
 		smallerQueue = new int[capacity/2];
 		for (int i = 0; i < size; ++i){
 			smallerQueue[i]=theQueue[front%capacity];
